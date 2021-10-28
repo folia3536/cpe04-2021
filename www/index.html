@@ -38,6 +38,14 @@
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
+
+        $('#btnD').click(function(e) {
+            btnDClick(e);
+        });
+
+        $('#btnE').click(function(e) {
+            btnEClick(e);
+        });
         init();
     });
     
@@ -160,7 +168,8 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
-        
+        $('#btnD').prop('disabled', false);
+        $('#btnE').prop('disabled', false);
     }
 
     // Alarmの処理
@@ -199,6 +208,16 @@
         period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
         $("#time").html("経過時間： 0");
         $("#remain").html("残り時間： " + period);
+    }
+
+    // ButtonDがクリックされた時の処理
+    function btnDClick(e){
+
+    }
+    
+    // ButtonEがクリックされた時の処理
+    function btnEClick(e){
+      
     }
     
  

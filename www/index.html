@@ -161,6 +161,7 @@
     var active = false;
     var startTime = 0;
     var period = 0;
+    var addition = 0;
 
     
     // ボタンの初期設定
@@ -212,7 +213,9 @@
 
     // ButtonDがクリックされた時の処理
     function btnDClick(e){
-
+      addition = 60* parseInt( $("#minute2").val() ) + parseInt( $("#second2").val() );
+      period += addition;
+      $("#remain").html("残り時間： " + period);
     }
     
     // ButtonEがクリックされた時の処理

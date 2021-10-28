@@ -162,6 +162,7 @@
     var startTime = 0;
     var period = 0;
     var addition = 0;
+    var time = 0;
 
     
     // ボタンの初期設定
@@ -215,21 +216,21 @@
     function btnDClick(e){
       addition = 60* parseInt( $("#minute2").val() ) + parseInt( $("#second2").val() );
       period += addition;
-      $("#remain").html("残り時間： " + period);
+      $("#remain").html("残り時間： " + (period - time) );
     }
     
     // ButtonEがクリックされた時の処理
     function btnEClick(e){
       addition = 60* parseInt( $("#minute2").val() ) + parseInt( $("#second2").val() );
       period -= addition;
-      $("#remain").html("残り時間： " + period);
+      $("#remain").html("残り時間： " + (period - time) );
     }
     
  
     // 繰り返し実行する処理
     function timer(){  
       if (active) {
-        var time = parseInt( (new Date() - startTime)/1000 );
+        time = parseInt( (new Date() - startTime)/1000 );
         var rest = period - time;
         $("#time").html("経過時間： " + time);
         $("#remain").html("残り時間： " + rest);
